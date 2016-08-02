@@ -59,7 +59,7 @@ echo "Installing Swarm Agent on ceph4"
 vagrant ssh ceph4 -c "sudo docker rm -f swarm-agent3"
 vagrant ssh ceph4 -c "sudo docker run -d \
       --name=swarm-agent3 \
-      --restart=always swarm:$SWARM_VERSION -experimental join \
+      --restart=always swarm:$SWARM_VERSION join \
       --advertise=192.168.5.5:2375 \
       consul://192.168.5.2:8500"
 
